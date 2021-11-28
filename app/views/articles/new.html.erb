@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1>画像投稿フォーム</h1>
+    <%= form_with model: @article, local:true do |f| %>
+      <h3>画像</h3>
+      <%= f.attachment_field :image %>
+      <h3>ショップ名</h3>
+      <%= f.text_field :title %>
+      <h3>説明</h3>
+      <%= f.text_area :body %>
+      <%= f.submit '新規作成' %>
+    <% end %>
+  </div>
+</div>
