@@ -1,14 +1,18 @@
 <div class="container">
   <div class="row">
-    <h1>画像投稿フォーム</h1>
+    <h3>画像投稿フォーム</h3>
+  </div>
+  <div class="row form-group">
     <%= form_with model: @article, local:true do |f| %>
-      <h3>画像</h3>
+      <h5>画像</h5>
       <%= f.attachment_field :image %>
-      <h3>ショップ名</h3>
+      <h5>タイトル</h5>
       <%= f.text_field :title %>
-      <h3>説明</h3>
-      <%= f.text_area :body %>
-      <%= f.submit '新規作成' %>
+      <h5>イントロダクション</h5>
+      <div class="col-lg-12">
+        <%= f.text_area :body, class: "form-control", rows: "5", placeholder: '投稿するイラストの説明を記述' %>
+      </div>
+      <br /><%= f.submit '新規作成' %>
     <% end %>
   </div>
 </div>

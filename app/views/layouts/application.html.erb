@@ -11,18 +11,12 @@
 
   <body>
     <% if admin_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_admin_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_admin_session_path %>
-      </li>
+      <div>
+        <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
+      </div>
+      <!--ログインはURLから実施するためボタンを設けない-->
     <% end %>
-    <h1>〇〇〇〇のまったりブログ</h1>
+    <h1 class="blog-title">〇〇〇〇のお絵描きブログ</h1>
     <%= yield %>
   </body>
 </html>
