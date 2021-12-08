@@ -1,10 +1,24 @@
-<h1>メイン画面</h1>
 <div class="container">
-  <div class="row">
-    ここは主が発信したいことを自由に掲載していきたいと思って作っています。<br />
+
+  <h1>主の成長実感</h1>
+
+  <div class="row mb-5">
+    ここは主のイラストの上達を記録していくところです。<br />
     サイクリングが趣味の二次ヲタです。
   </div>
 
+  <% @articles.each do |article| %>
+    <div class="row top-detail-title">
+      <%= article.title %>
+    </div>
 
+    <div class="row top-detail-image">
+      <%= attachment_image_tag article, :image, :fill, 300,300, format: 'jpeg', size: "300x300", fallback: "no_image.jpg", class: "mb-3" %>
+    </div>
+
+    <div class="row mb-5 top-detail-body">
+      <%= article.body %>
+    </div>
+  <% end %>
 
 </div>
