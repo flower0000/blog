@@ -15,14 +15,23 @@
         <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
       </div>
       <!--ログインはURLから実施するためボタンを設けない-->
+    <%# else %>
+
     <% end %>
+
     <h1 class="blog-title">〇〇〇〇のお絵描きブログ</h1>
 
     <div class="d-flex flex-row">
+<!--rowを使わずにd-flex(要素をフレックスアイテムにして位置を調整)-->
       <div class="side-bar mr-auto"></div>
       <%= yield %>
       <div class="side-bar ml-auto"></div>
+
     </div>
+
+    <footer class="border-top">
+    <!--空白用。下に75px何もない領域を作成している-->
+    </footer>
 
   </body>
 </html>

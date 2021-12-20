@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :articles
   
   #管理者機能
-  
-  
   #deviseのルーティング
   devise_for :admins
 end
